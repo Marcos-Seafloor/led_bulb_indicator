@@ -25,7 +25,7 @@ class LedBulbIndicator extends StatelessWidget {
       this.glow = false})
       : super(key: key);
 
-  final Map<LedBulbColors, List<Color>> bulbColors = {
+  final Map<LedBulbColors, List<Color>> _bulbColors = {
     LedBulbColors.green: <Color>[
       Colors.green.shade900,
       Colors.green.shade300,
@@ -47,7 +47,7 @@ class LedBulbIndicator extends StatelessWidget {
       Colors.grey.shade50,
     ]
   };
-  final Map<LedBulbColors, List<Color>> reflectionBulbColors = {
+  final Map<LedBulbColors, List<Color>> _reflectionBulbColors = {
     LedBulbColors.green: <Color>[
       Colors.white,
       Colors.white60,
@@ -73,13 +73,13 @@ class LedBulbIndicator extends StatelessWidget {
       Colors.transparent,
     ]
   };
-  final Map<LedBulbColors, Color> borderBulbColors = {
+  final Map<LedBulbColors, Color> _borderBulbColors = {
     LedBulbColors.green: Colors.green,
     LedBulbColors.yellow: Colors.amber,
     LedBulbColors.red: Colors.red,
     LedBulbColors.off: Colors.blueGrey.shade300
   };
-  final Map<LedBulbColors, Color> glowBulbColors = {
+  final Map<LedBulbColors, Color> _glowBulbColors = {
     LedBulbColors.green: Colors.green,
     LedBulbColors.yellow: Colors.yellow,
     LedBulbColors.red: Colors.red,
@@ -101,16 +101,17 @@ class LedBulbIndicator extends StatelessWidget {
                   boxShadow: glow
                       ? [
                           BoxShadow(
-                              color: glowBulbColors[initialState]!,
+                              color: _glowBulbColors[initialState]!,
                               blurRadius: size / 10,
                               spreadRadius: 2)
                         ]
                       : [],
                   shape: BoxShape.circle,
                   border: Border.all(
-                      color: borderBulbColors[initialState]!, width: size / 15),
+                      color: _borderBulbColors[initialState]!,
+                      width: size / 15),
                   gradient: LinearGradient(
-                    colors: bulbColors[initialState]!,
+                    colors: _bulbColors[initialState]!,
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                   ),
@@ -125,7 +126,7 @@ class LedBulbIndicator extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     gradient: LinearGradient(
-                      colors: reflectionBulbColors[initialState]!,
+                      colors: _reflectionBulbColors[initialState]!,
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
