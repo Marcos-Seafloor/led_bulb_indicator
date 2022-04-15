@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
+/// Defines the color of the LED Bulb to be shown.
 enum LedBulbColors { off, red, green, yellow }
 
+/// Shows a kind of LED bulb to quickly indicate status of something
 class LedBulbIndicator extends StatelessWidget {
+  /// Which status to show by means of a [LedBulbColors]
   final LedBulbColors initialState;
+
+  /// if true, there will be a glow shown around the bulb. State off will never show a glow.
   final bool glow;
+
+  /// the size of the LED Bulb indicator widget (width and height always same)
   final double size;
+
+  /// if specified, a margin around the LED Bulb widget.
   final double? margin;
 
   LedBulbIndicator(
