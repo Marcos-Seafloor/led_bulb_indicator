@@ -2,6 +2,9 @@
 
 A simple widget to indicate a status by using an LED kind of style.
 
+![LED Bulbs](https://github.com/Terranic/led_bulb_indicator/blob/main/ledbulbexample.png)
+
+
 ## Features
 
 Four status types are supported: green, yellow, red, off.
