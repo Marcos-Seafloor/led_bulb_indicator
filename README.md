@@ -8,8 +8,19 @@ Four status types are supported: green, yellow, red, off.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+In the pubspec.yaml of your flutter project, add the following dependency:
+
+```yaml
+dependencies:
+  ...
+  led_bulb_indicator: ^0.0.1
+```
+
+and import it:
+
+```dart
+import 'package:led_bulb_indicator/led_bulb_indicator.dart';
+```
 
 ## Usage
 

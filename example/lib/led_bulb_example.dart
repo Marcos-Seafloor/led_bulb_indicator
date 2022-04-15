@@ -9,52 +9,56 @@ class LightBulbIndicatorExample extends StatelessWidget {
   @override
   Widget build(context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                LedBulbIndicator(
-                  initialState: LedBulbColors.green,
-                  size: 25,
-                ),
-                LedBulbIndicator(
-                  initialState: LedBulbColors.yellow,
-                  size: 25,
-                ),
-                LedBulbIndicator(
-                  initialState: LedBulbColors.red,
-                  glow: true,
-                  size: 50,
-                ),
-                LedBulbIndicator(
-                  initialState: LedBulbColors.off,
-                  size: 25,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                LedBulbIndicator(
-                  initialState: LedBulbColors.red,
-                  glow: true,
-                  size: 20,
-                  margin: 10,
-                ),
-                Text("Malfunction detected"),
-              ],
-            ),
-            Row(
-              children: [
-                LedBulbIndicator(
-                  initialState: LedBulbColors.green,
-                  size: 20,
-                ),
-                Text("All systems nominal"),
-              ],
-            ),
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  LedBulbIndicator(
+                    initialState: LedBulbColors.green,
+                    size: 25,
+                  ),
+                  LedBulbIndicator(
+                    initialState: LedBulbColors.yellow,
+                    size: 25,
+                  ),
+                  LedBulbIndicator(
+                    initialState: LedBulbColors.red,
+                    glow: true,
+                    size: 50,
+                  ),
+                  LedBulbIndicator(
+                    initialState: LedBulbColors.off,
+                    size: 25,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  LedBulbIndicator(
+                    initialState: LedBulbColors.red,
+                    glow: true,
+                    size: 20,
+                    margin: 10,
+                  ),
+                  Text("Malfunction detected"),
+                ],
+              ),
+              Row(
+                children: [
+                  LedBulbIndicator(
+                    initialState: LedBulbColors.green,
+                    size: 20,
+                  ),
+                  Text("All systems nominal"),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
