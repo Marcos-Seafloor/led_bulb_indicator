@@ -6,10 +6,10 @@ enum LedBulbColors { off, red, green, yellow }
 /// Shows a kind of LED bulb to quickly indicate status of something
 class LedBulbIndicator extends StatelessWidget {
   /// Which status to show by means of a [LedBulbColors]
-  final LedBulbColors initialState;
+  LedBulbColors initialState;
 
   /// if true, there will be a glow shown around the bulb. State off will never show a glow.
-  final bool glow;
+  bool glow;
 
   /// the size of the LED Bulb indicator widget (width and height always same)
   final double size;
@@ -24,6 +24,26 @@ class LedBulbIndicator extends StatelessWidget {
       required this.size,
       this.glow = false})
       : super(key: key);
+
+  // set glow status
+  void setGlowStatus(bool status) {
+    glow = status;
+  }
+
+  // set current color
+  void setLedBulbColor(LedBulbColors color) {
+    initialState = color;
+  }
+
+  // get glow status
+  bool getGlowStatus() {
+    return glow;
+  }
+
+  // get current color
+  LedBulbColors getLedBulbColor() {
+    return initialState;
+  }
 
   final Map<LedBulbColors, List<Color>> _bulbColors = {
     LedBulbColors.green: <Color>[
